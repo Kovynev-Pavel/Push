@@ -1,0 +1,18 @@
+{% extends 'main/layout.html' %}
+
+{% block title %} Добавить отзыв {% endblock %}
+
+{% block content %}
+    <h1>Отзывы</h1><br>
+    <a class="btn btn-success" href="{% url 'rewiew' %}"> Добавить Отзыв</a><br>
+    {% if rewiews %}
+        <div class="pon3">
+            {% for i in rewiews %}
+                <div>
+                    <h5>{{ i.first_name }}</h5><br>
+                    <p>{{ i.content }}</p>
+                </div><br>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}
